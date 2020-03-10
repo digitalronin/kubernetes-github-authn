@@ -1,5 +1,6 @@
 REPO := digitalronin/kubernetes-github-authn
 IMAGE_NAME := $(REPO)
+VERSION := 1.1
 GO_SRC_PATH := /go/src/github.com/$(REPO)
 PORT := 8080
 
@@ -31,3 +32,7 @@ docker-build:
 .PHONY: docker-run
 docker-run:
 	docker run -it --rm -p $(PORT):3000 $(IMAGE_NAME)
+
+docker-push:
+	docker tag $(IMAGE_NAME) $(IMAGE_NAME):$(VERSION)
+	docker push $(IMAGE_NAME):$(VERSION)
