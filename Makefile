@@ -7,7 +7,7 @@ ifeq (1,${WITH_DOCKER})
 DOCKER_RUN := docker run --rm -i \
 	-v `pwd`:$(GO_SRC_PATH) \
 	-w $(GO_SRC_PATH)
-GO_RUN := $(DOCKER_RUN) golang:1.7.5-alpine
+GO_RUN := $(DOCKER_RUN) golang:1.14-alpine
 GLIDE_RUN := $(DOCKER_RUN) -e GLIDE_HOME=/root/.glide lwolf/golang-glide
 endif
 
