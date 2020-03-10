@@ -14,6 +14,15 @@ You should configure Kubernetes apiserver with an [authorization
 plugin](https://kubernetes.io/docs/admin/authorization/) to control what
 Kubernetes resources can a user access.
 
+## Building the project
+
+* Install golang 1.14
+* Install glide (>= 0.13.3)
+* `glide install`
+* `make docker-build`
+* `docker tag $(REPO) $(REPO):$(VERSION)`
+* `docker push $(REPO):$(VERSION)`
+
 ## How to use
 
 First of all, you need to run the authenticator using the example [DaemonSet
