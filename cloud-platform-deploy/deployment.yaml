@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: github-authn
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: github-authn
+    spec:
+      containers:
+      - name: github-authn-app
+        image: digitalronin/kubernetes-github-authn:1.1
+        ports:
+        - containerPort: 3000

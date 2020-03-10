@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: github-authn-service
+  labels:
+    app: github-authn-service
+spec:
+  ports:
+  - port: 3000
+    name: http
+    targetPort: 3000
+  selector:
+    app: github-authn

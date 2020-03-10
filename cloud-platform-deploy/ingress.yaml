@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: github-authn-ingress
+spec:
+  tls:
+  - hosts:
+    - github-authn.apps.david-auth.cloud-platform.service.justice.gov.uk
+  rules:
+  - host: github-authn.apps.david-auth.cloud-platform.service.justice.gov.uk
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: github-authn-service
+          servicePort: 3000
