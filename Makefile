@@ -36,3 +36,11 @@ docker-run:
 docker-push:
 	docker tag $(IMAGE_NAME) $(IMAGE_NAME):$(VERSION)
 	docker push $(IMAGE_NAME):$(VERSION)
+
+# Remember to update the version number in Makefile and cloud-platform-deploy/deployment.yaml
+# before running this.
+.PHONY: deploy
+deploy:
+	make docker-build
+	make docker-push
+	kubectl apply -f cloud-platform-deploy/
