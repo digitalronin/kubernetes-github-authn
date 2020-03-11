@@ -16,6 +16,10 @@ You should see output when you hit the app. like this:
 
     curl -X GET $APISERVER/api --header "Authorization: Bearer $TOKEN" --insecure
 
+# Login to the cluster
+
+https://login.apps.david-auth.cloud-platform.service.justice.gov.uk/
+
 # Setting up
 
 ## Deploy this app. on the cluster
