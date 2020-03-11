@@ -13,6 +13,7 @@ import (
 
 func main() {
 	http.HandleFunc("/authenticate", func(w http.ResponseWriter, r *http.Request) {
+		log.Println("[Debug]", r.URL)
 		decoder := json.NewDecoder(r.Body)
 		var tr authentication.TokenReview
 		err := decoder.Decode(&tr)
@@ -28,6 +29,8 @@ func main() {
 			})
 			return
 		}
+
+		log.Println("[Debug]", "Checking github...")
 
 		// Check User
 		ts := oauth2.StaticTokenSource(
@@ -49,6 +52,7 @@ func main() {
 			return
 		}
 
+		log.Println("[Successful login]", *user.Login)
 		log.Printf("[Success] login as %s", *user.Login)
 		w.WriteHeader(http.StatusOK)
 		trs := authentication.TokenReviewStatus{

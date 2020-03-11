@@ -1,6 +1,6 @@
 REPO := digitalronin/kubernetes-github-authn
 IMAGE_NAME := $(REPO)
-VERSION := 1.1
+VERSION := 1.4
 GO_SRC_PATH := /go/src/github.com/$(REPO)
 PORT := 8080
 

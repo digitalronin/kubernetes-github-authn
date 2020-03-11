@@ -11,6 +11,6 @@ spec:
     spec:
       containers:
       - name: github-authn-app
-        image: digitalronin/kubernetes-github-authn:1.1
+        image: digitalronin/kubernetes-github-authn:1.4
         ports:
         - containerPort: 3000
